@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block page %}
+  <a href="{% url 'blog-about' %}">About</a>
+  <a href="{% url 'blog-home' %}">Home</a>
+{% endblock page %}
+
+{% block content %}
+    <h2>you have been logout</h2>
+    <div>
+        <small>
+            <a href="{% url 'login' %}">Log In</a>
+        </small>
+    </div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block page %}
+  <a href="{% url 'blog-about' %}">About</a>
+  <a href="{% url 'blog-home' %}">Home</a>
+{% endblock page %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset >
+            <legend>
+                Delete Post
+            </legend>
+            <h2>are you sure delete object {{ object.title }}</h2>
+            <div>
+                <button type="submit">Yes</button>
+            </div>
+            <a href="{% url 'post-detail' object.id %}">Cancel</a>
+            
+        </fieldset>
+    </form>
+{% endblock content %}
